@@ -1,0 +1,59 @@
+
+#include <stdio.h>
+#include<string.h>
+void main(){
+    char s[100],c;
+    int max=0,l,k;
+    printf("Enter the string");
+    int len=strlen(s);
+    for(int i=0;i<len;i++){
+        scanf("%c",&s[i]);
+    }
+    
+    printf("Enter the number of unique characters");
+    int n,flag=0;
+    char check[n];
+    scanf("%d",&n);
+    
+    check[0]=s[0];
+    int count=1;
+    for(int i=0;i<n;i++)
+    {
+        check[0]=s[i];
+        for(int j=i;j<n;j++)
+        {
+            flag=0;
+          for(k=0;k<count;k++)
+          {
+              if(check[k]!=s[j])
+              {
+                  flag=1;
+                  }
+              
+               }
+           if(flag==1){
+               if(count!=n){
+                   check[k]=s[j];
+                   break;
+               }
+           }
+          if(count==n)
+          {
+            l=j-i;
+            if(l>max){
+                max=l;
+            }
+            
+            
+          }
+              
+          }
+          count=1;
+          
+          
+     }
+    printf("Maximum characters: %d",max);
+    
+    
+}
+  
